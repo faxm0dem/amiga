@@ -11,12 +11,12 @@ outprefix=${romfile%%.rom}
 outLO=${outprefix}.LO.bin
 outHI=${outprefix}.HI.bin
 
-if [ ! -r $romfile ]; then
+if [ ! -r "$romfile" ]; then
 	echo "Error reading file $romfile: $!" >&2
 	exit 3
 fi
 
-if [ -f $outLO -o -f $outHI ]; then
+if [ -f "$outLO" -o -f "$outHI" ]; then
 	echo "One of outfiles $outLO or $outHI already exists" >&2
 	exit 4
 fi
